@@ -201,8 +201,11 @@ class App extends React.Component {
         </div>
         <div id='controls'>
           <span id='start_stop' onClick={this.handleCountdown}>
-            <i className="fas fa-play fa-2x"></i>
-            <i className="fas fa-pause fa-2x"></i>
+            {
+              this.state.paused
+              ? <i className="fas fa-play fa-2x"></i>
+              : <i className="fas fa-pause fa-2x"></i>
+            }
           </span>
           <span id='reset' onClick={this.clearAll}>
             <i className="fas fa-redo-alt fa-2x"></i>
