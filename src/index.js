@@ -122,9 +122,9 @@ class App extends React.Component {
 
   playSound = () => {
     if (this.state.currentTime === 0) {
-    sound = document.getElementById('beep');
-    sound.currentTime = 0;
-    sound.play();
+      sound = document.getElementById('beep');
+      sound.currentTime = 0;
+      sound.play();
     };
   }
 
@@ -142,7 +142,15 @@ class App extends React.Component {
                    value='-'
                    onClick={this.sessionChange}/>
               </span>
-              <div id='session-length'>{this.state.sessionTime}</div>
+              <input
+                id='session-length'
+                className="number-input"
+                onChange={e => this.setState({
+                      sessionTime: e.target.value,
+                      currentTime: e.target.value * 60 + 60
+                   })}
+                value={this.state.sessionTime}
+              />
               <span>
                 <i className="fas fa-arrow-up"
                    id='session-increment'
@@ -160,7 +168,14 @@ class App extends React.Component {
                    value='-'
                    onClick={this.breakChange}/>
               </span>
-              <div id='break-length'>{this.state.breakTime}</div>
+              <input
+                id='break-length'
+                className="number-input"
+                value={this.state.breakTime}
+                onChange={e => this.setState({
+                    breakTime: e.target.value,
+                  })}
+              />
               <span>
                 <i className="fas fa-arrow-up"
                    id='break-increment'
