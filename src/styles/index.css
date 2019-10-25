@@ -63,7 +63,7 @@ body {
 }
 
 #time-left {
-  border: 5px solid black;
+  border: 5px solid white;
   width: 200px;
   height: 160px;
   font-size: 36px;
@@ -86,4 +86,14 @@ body {
 
 span:hover {
   cursor: pointer;
+}
+
+.number-input {
+  border: 3px solid white;
+  width: 100%;
+  border-radius: 14px;
+  background-color: transparent;
+  text-align: center;
+  margin: 0px 5px 0px 5px;
+  outline: none;
 }
